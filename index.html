@@ -1,192 +1,143 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fleelax - Plataforma de Freelancers</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f4f8;
-      color: #333;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-    }
-    header {
-      background: #fff;
-      padding: 20px 0;
-      border-bottom: 3px solid #ff6f61;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 {
-      text-align: center;
-      font-size: 2.6em;
-      color: #333;
-      margin-bottom: 10px;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      transition: all 0.3s ease;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #6b5b95;
-      font-weight: 600;
-      padding: 10px 15px;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-    }
-    nav a:hover {
-      color: #fff;
-      background: #6b5b95;
-    }
-    .hero {
-      background: linear-gradient(135deg, #ff6f61, #f7b733);
-      padding: 70px 20px;
-      text-align: center;
-      border-radius: 8px;
-      margin-bottom: 40px;
-      color: #fff;
-      animation: fadeIn 1.2s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .categories {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
-    .category {
-      background: #fff;
-      border: 1px solid #eaeaea;
-      border-radius: 8px;
-      padding: 20px;
-      width: 260px;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-    .category:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
-    }
-    .animated-button {
-      padding: 15px 30px;
-      background-color: #ff6f61;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-size: 1.1em;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    .animated-button:hover {
-      transform: scale(1.1);
-      background-color: #e55b4d;
-    }
-    .testimonials, .services-info, .how-it-works, .faq {
-      background: #fff;
-      padding: 40px;
-      border-radius: 8px;
-      margin-bottom: 40px;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-    .cta {
-      text-align: center;
-      margin: 40px 0;
-    }
-    .cta h2 {
-      color: #ff6f61;
-      margin-bottom: 10px;
-    }
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    .social-icons {
-      margin-top: 10px;
-    }
-    .social-icons a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-size: 1.2em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleelax - Conectando Freelancers e Clientes</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #0073e6, #00b4d8);
+            padding: 15px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        header nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 50px;
+            background: url('hero-bg.jpg') no-repeat center center/cover;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .hero button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 15px 25px;
+            margin: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .hero button:hover {
+            background-color: #ff9900;
+        }
+        .services {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .services h2 {
+            margin-bottom: 20px;
+            color: #0073e6;
+        }
+        .services .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .services div {
+            background: white;
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .services div:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Fleelax</h1>
-      <nav>
-        <a href="index.html">Início</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="como-funciona.html">Como Funciona</a>
-        <a href="servicos.html">Serviços</a>
-        <a href="faq.html">FAQ</a>
-        <a href="login.html">Login</a>
-      </nav>
-    </div>
-  </header>
-  <div class="container">
+    <header>
+        <nav>
+            <a href="sobre.html">Sobre</a>
+            <a href="como-funciona.html">Como Funciona</a>
+            <a href="cadastro.html">Cadastro</a>
+            <a href="planos.html">Planos</a>
+            <a href="procurando-freelancer.html">Buscar Projetos</a>
+        </nav>
+    </header>
+
     <section class="hero">
-      <h2>Encontre os melhores freelancers!</h2>
-      <p>Explore uma variedade de serviços profissionais para sua empresa ou projeto.</p>
-      <button class="animated-button">Comece agora</button>
+        <h1>Encontre ou Ofereça Serviços Freelance!</h1>
+        <button onclick="location.href='procurando-freelancer.html'">Contratar</button>
+        <button onclick="location.href='cadastro-freelancer.html'">Trabalhar</button>
     </section>
-    <section class="services-info">
-      <h2>Nossos Serviços</h2>
-      <p>Conectamos freelancers qualificados com clientes que precisam de serviços em diversas áreas.</p>
+
+    <section class="services">
+        <h2>Serviços que os Freelancers Oferecem</h2>
+        <div class="grid">
+            <div>🎨 Design Gráfico</div>
+            <div>💻 Desenvolvimento Web</div>
+            <div>✍️ Redação e Tradução</div>
+            <div>📈 Marketing Digital</div>
+            <div>📞 Assistência Virtual</div>
+            <div>🎥 Edição de Vídeo</div>
+            <div>📸 Fotografia Profissional</div>
+        </div>
     </section>
-    <section class="how-it-works">
-      <h2>Como Funciona?</h2>
-      <p>Clientes postam projetos, freelancers se candidatam e o pagamento é realizado com segurança.</p>
-    </section>
-    <section class="faq">
-      <h2>Perguntas Frequentes</h2>
-      <p>Respondemos às principais dúvidas sobre como usar a Fleelax.</p>
-    </section>
-    <section class="cta">
-      <h2>Pronto para começar?</h2>
-      <p>Cadastre-se agora e encontre os melhores freelancers!</p>
-      <button class="animated-button">Cadastre-se</button>
-    </section>
-  </div>
-  <footer>
-    <p>&copy; 2025 Fleelax - Todos os direitos reservados.</p>
-    <div class="social-icons">
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">LinkedIn</a>
-    </div>
-  </footer>
+
+    <footer>
+        <p>&copy; 2025 Fleelax - Todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="faq.html">FAQ</a>
+            <a href="politica-privacidade.html">Política de Privacidade</a>
+            <a href="contato.html">Contato</a>
+            <a href="outros-assuntos.html">Outros Assuntos</a>
+        </div>
+    </footer>
 </body>
 </html>
