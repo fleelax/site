@@ -1,169 +1,386 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fleelax - Conectando Freelancers e Clientes</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        header {
-            background: linear-gradient(90deg, #0073e6, #00b4d8);
-            padding: 15px 0;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-        header nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        header nav a:hover {
-            text-decoration: underline;
-        }
-        .hero {
-            text-align: center;
-            padding: 100px 50px;
-            background: url('hero-bg.jpg') no-repeat center center/cover;
-            color: white;
-        }
-        .hero h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        .hero button {
-            background-color: #ffcc00;
-            border: none;
-            padding: 15px 25px;
-            margin: 10px;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .hero button:hover {
-            background-color: #ff9900;
-        }
-        .services, .plans, .projects, .register {
-            padding: 60px 20px;
-            text-align: center;
-        }
-        .services h2, .plans h2, .projects h2, .register h2 {
-            margin-bottom: 20px;
-            color: #0073e6;
-        }
-        .services .grid, .plans .grid, .projects .grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .services div, .plans div, .projects div {
-            background: white;
-            padding: 20px;
-            width: 250px;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        .services div:hover, .plans div:hover, .projects div:hover {
-            transform: scale(1.05);
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-        }
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fleelax - Plataforma para freelancers oferecerem seus serviços." />
+  <title>Fleelax - Plataforma de Freelancers</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 15px;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+    .hero {
+      background-color: #ff6f61;
+      color: white;
+      text-align: center;
+      padding: 60px 0;
+      margin-top: 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
+
+    .hero .button {
+      background-color: white;
+      color: #ff6f61;
+      padding: 10px 25px;
+      font-size: 1.2em;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hero .button:hover {
+      background-color: #fff;
+      color: #e55b4d;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 40px 0;
+    }
+
+    .filters input[type="text"],
+    .filters select {
+      padding: 12px;
+      font-size: 1em;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .filters button {
+      background-color: #ff6f61;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .filters button:hover {
+      background-color: #e55b4d;
+    }
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .category {
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      width: 250px;
+      text-align: center;
+    }
+
+    .category h3 {
+      font-size: 1.5em;
+      color: #ff6f61;
+    }
+
+    .reviews {
+      background-color: #fff;
+      text-align: center;
+      margin-top: 40px;
+      padding: 40px 0;
+    }
+
+    .reviews h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .reviews p {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .faq {
+      background-color: #fff;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .faq h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .faq-item h3 {
+      font-size: 1.4em;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .cta h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .cta .button {
+      padding: 15px 40px;
+      font-size: 1.5em;
+    }
+
+    .auth {
+      background-color: #f4f4f4;
+      padding: 40px 0;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .auth input {
+      padding: 12px 20px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 300px;
+    }
+
+    .auth button {
+      padding: 12px 25px;
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      font-size: 1.1em;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .auth button:hover {
+      background-color: #e55b4d;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      .hero h2 {
+        font-size: 1.8em;
+      }
+
+      .filters {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .filters input[type="text"],
+      .filters select {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .category {
+        width: 100%;
+      }
+
+      .cta h2 {
+        font-size: 1.8em;
+      }
+
+      .cta .button {
+        font-size: 1.3em;
+      }
+
+      .auth input {
+        width: 80%;
+      }
+
+      .auth button {
+        width: 80%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="sobre.html">Sobre</a>
-            <a href="como-funciona.html">Como Funciona</a>
-            <a href="cadastro.html">Cadastro</a>
-            <a href="planos.html">Planos</a>
-            <a href="procurando-freelancer.html">Buscar Projetos</a>
-        </nav>
-    </header>
+  <header>
+    <div class="container">
+      <h1>Fleelax</h1>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="como-funciona.html">Como Funciona</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="faq.html">FAQ</a>
+        <a href="blog.html">Blog</a>
+        <a href="contato.html">Contato</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </div>
+  </header>
 
+  <div class="container">
+    <!-- Hero Section -->
     <section class="hero">
-        <h1>Encontre ou Ofereça Serviços Freelance!</h1>
-        <button onclick="location.href='procurando-freelancer.html'">Contratar</button>
-        <button onclick="location.href='cadastro-freelancer.html'">Trabalhar</button>
+      <h2>Encontre os melhores freelancers!</h2>
+      <p>Explore uma variedade de serviços profissionais para sua empresa ou projeto.</p>
+      <a href="#!" class="button">Comece agora</a>
     </section>
 
-    <section class="register">
-        <h2>Cadastre-se como Prestador de Serviços</h2>
-        <p>Crie seu perfil, mostre suas habilidades e comece a receber propostas de clientes.</p>
-        <button onclick="location.href='cadastro-freelancer.html'">Cadastrar</button>
+    <!-- Filtros de Pesquisa -->
+    <div class="filters">
+      <input type="text" placeholder="Pesquise por serviço...">
+      <select>
+        <option value="">Categoria</option>
+        <option value="web">Desenvolvimento Web</option>
+        <option value="design">Design Gráfico</option>
+        <option value="marketing">Marketing Digital</option>
+        <option value="escrita">Redação</option>
+        <option value="consultoria">Consultoria</option>
+        <option value="financeiro">Consultoria Financeira</option>
+        <option value="fotografia">Fotografia e Vídeo</option>
+        <option value="tradução">Tradução e Interpretação</option>
+        <option value="programacao">Programação</option>
+        <option value="suporte">Suporte Técnico</option>
+        <option value="legal">Consultoria Jurídica</option>
+        <option value="redesocial">Gestão de Redes Sociais</option>
+        <option value="copywriting">Copywriting</option>
+      </select>
+      <select>
+        <option value="">Região</option>
+        <option value="norte">Norte</option>
+        <option value="nordeste">Nordeste</option>
+        <option value="sudeste">Sudeste</option>
+        <option value="sul">Sul</option>
+        <option value="centro-oeste">Centro-Oeste</option>
+      </select>
+      <button>Filtrar</button>
+    </div>
+
+    <!-- Categorias de Serviços -->
+    <section class="categories">
+      <div class="category">
+        <h3>Desenvolvimento Web</h3>
+        <p>Criação de sites, e-commerces e soluções digitais.</p>
+      </div>
+      <div class="category">
+        <h3>Design Gráfico</h3>
+        <p>Design criativo para identidade visual, logos e material publicitário.</p>
+      </div>
+      <div class="category">
+        <h3>Marketing Digital</h3>
+        <p>Estratégias e gestão de marketing digital para empresas.</p>
+      </div>
     </section>
 
-    <section class="services">
-        <h2>Serviços que os Freelancers Oferecem</h2>
-        <div class="grid">
-            <div>🎨 Design Gráfico</div>
-            <div>💻 Desenvolvimento Web</div>
-            <div>✍️ Redação e Tradução</div>
-            <div>📈 Marketing Digital</div>
-            <div>📞 Assistência Virtual</div>
-            <div>🎥 Edição de Vídeo</div>
-            <div>📸 Fotografia Profissional</div>
-        </div>
+    <!-- Depoimentos -->
+    <section class="reviews">
+      <h2>O que nossos clientes dizem</h2>
+      <p>"A Fleelax me ajudou a encontrar o profissional perfeito para meu projeto!"</p>
+      <p>- João Silva, Empresário</p>
+      <p>"Os freelancers são muito qualificados e entregaram tudo no prazo!"</p>
+      <p>- Maria Oliveira, Empreendedora</p>
     </section>
 
-    <section class="plans">
-        <h2>Planos Disponíveis</h2>
-        <div class="grid">
-            <div>🆓 Plano Gratuito - Perfil Básico</div>
-            <div>💼 Plano Profissional - Maior Visibilidade</div>
-            <div>🏆 Plano Premium - Destaque e Benefícios Extras</div>
-        </div>
+    <!-- Sobre -->
+    <section class="about">
+      <h2>Sobre a Fleelax</h2>
+      <p>A Fleelax é uma plataforma que conecta freelancers qualificados a empresas e empreendedores que precisam de serviços profissionais de alta qualidade.</p>
+      <p>Estamos aqui para ajudar a sua empresa a crescer com a ajuda de profissionais talentosos nas mais diversas áreas.</p>
     </section>
 
-    <section class="projects">
-        <h2>Projetos Disponíveis</h2>
-        <div class="grid">
-            <div>📜 Redação de Artigos</div>
-            <div>🎨 Criação de Logotipos</div>
-            <div>💻 Desenvolvimento de Sites</div>
-            <div>📊 Consultoria em Marketing</div>
-        </div>
+    <!-- Preços -->
+    <section class="pricing">
+      <h2>Preços</h2>
+      <p>Escolha o plano que melhor atende às suas necessidades e comece a contratar freelancers imediatamente.</p>
+      <div class="pricing-option">
+        <h3>Plano Básico</h3>
+        <p>Acesso a freelancers em uma única categoria de serviço.</p>
+        <p>Preço: R$ 50/mês</p>
+      </div>
+      <div class="pricing-option">
+        <h3>Plano Premium</h3>
+        <p>Acesso completo a todas as categorias de serviço.</p>
+        <p>Preço: R$ 150/mês</p>
+      </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Fleelax - Todos os direitos reservados.</p>
-        <div class="footer-links">
-            <a href="faq.html">FAQ</a>
-            <a href="politica-privacidade.html">Política de Privacidade</a>
-            <a href="contato.html">Contato</a>
-            <a href="termos.html">Termos de Serviço</a>
-            <a href="suporte.html">Suporte</a>
-        </div>
-    </footer>
+    <!-- Contato -->
+    <section class="contact">
+      <h2>Entre em Contato</h2>
+      <p>Se você tiver dúvidas, sugestões ou quiser saber mais sobre nossos serviços, entre em contato conosco.</p>
+      <form>
+        <input type="text" placeholder="Seu Nome" required>
+        <input type="email" placeholder="Seu Email" required>
+        <textarea placeholder="Sua Mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+      <h2>Pronto para começar?</h2>
+      <a href="#!" class="button">Cadastre-se agora</a>
+    </section>
+
+    <!-- Autenticação -->
+    <section class="auth">
+      <h2>Faça login para começar</h2>
+      <form>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Senha">
+        <button type="submit">Entrar</button>
+      </form>
+      <p>Não tem uma conta? <a href="#">Cadastre-se agora</a></p>
+    </section>
+  </div>
 </body>
 </html>
