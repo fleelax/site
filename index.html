@@ -57,21 +57,21 @@
         .hero button:hover {
             background-color: #ff9900;
         }
-        .services {
+        .services, .plans, .projects, .register {
             padding: 60px 20px;
             text-align: center;
         }
-        .services h2 {
+        .services h2, .plans h2, .projects h2, .register h2 {
             margin-bottom: 20px;
             color: #0073e6;
         }
-        .services .grid {
+        .services .grid, .plans .grid, .projects .grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
-        .services div {
+        .services div, .plans div, .projects div {
             background: white;
             padding: 20px;
             width: 250px;
@@ -79,7 +79,7 @@
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
-        .services div:hover {
+        .services div:hover, .plans div:hover, .projects div:hover {
             transform: scale(1.05);
         }
         footer {
@@ -117,6 +117,12 @@
         <button onclick="location.href='cadastro-freelancer.html'">Trabalhar</button>
     </section>
 
+    <section class="register">
+        <h2>Cadastre-se como Prestador de Serviços</h2>
+        <p>Crie seu perfil, mostre suas habilidades e comece a receber propostas de clientes.</p>
+        <button onclick="location.href='cadastro-freelancer.html'">Cadastrar</button>
+    </section>
+
     <section class="services">
         <h2>Serviços que os Freelancers Oferecem</h2>
         <div class="grid">
@@ -130,13 +136,33 @@
         </div>
     </section>
 
+    <section class="plans">
+        <h2>Planos Disponíveis</h2>
+        <div class="grid">
+            <div>🆓 Plano Gratuito - Perfil Básico</div>
+            <div>💼 Plano Profissional - Maior Visibilidade</div>
+            <div>🏆 Plano Premium - Destaque e Benefícios Extras</div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <h2>Projetos Disponíveis</h2>
+        <div class="grid">
+            <div>📜 Redação de Artigos</div>
+            <div>🎨 Criação de Logotipos</div>
+            <div>💻 Desenvolvimento de Sites</div>
+            <div>📊 Consultoria em Marketing</div>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2025 Fleelax - Todos os direitos reservados.</p>
         <div class="footer-links">
             <a href="faq.html">FAQ</a>
             <a href="politica-privacidade.html">Política de Privacidade</a>
             <a href="contato.html">Contato</a>
-            <a href="outros-assuntos.html">Outros Assuntos</a>
+            <a href="termos.html">Termos de Serviço</a>
+            <a href="suporte.html">Suporte</a>
         </div>
     </footer>
 </body>
