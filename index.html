@@ -4,7 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro para Vender Produtos Digitais</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #003366, #000000); /* Gradiente do azul escuro para o preto */
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .image-section {
+            width: 50%;
+        }
+
+        .image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra na imagem */
+        }
+
+        .form-section {
+            width: 40%;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #003366; /* Azul escuro para o título */
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #003366;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #003366; /* Azul escuro para o botão */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #00509e; /* Azul mais claro ao passar o mouse */
+        }
+
+        .or-divider {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .or-divider span {
+            font-size: 18px;
+            color: #003366;
+        }
+
+        .google-signup {
+            width: 100%;
+            padding: 12px;
+            background-color: #db4437;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .google-signup:hover {
+            background-color: #c1351d;
+        }
+    </style>
 </head>
 <body>
 
@@ -30,6 +125,31 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Função de cadastro (aqui você pode adicionar lógica para enviar os dados para o servidor)
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Obter os dados do formulário
+            let nome = document.getElementById('nome').value;
+            let email = document.getElementById('email').value;
+            let senha = document.getElementById('senha').value;
+
+            console.log("Cadastro realizado:");
+            console.log("Nome:", nome);
+            console.log("Email:", email);
+            console.log("Senha:", senha);
+
+            // Aqui você pode adicionar a lógica para salvar os dados do usuário (por exemplo, com Firebase ou outro banco)
+        });
+
+        // Função para login com Google (necessita configurar API do Google)
+        function googleSignUp() {
+            console.log("Usuário tentando se cadastrar com Google...");
+            // Aqui você pode adicionar a integração com a API do Google
+            alert("Função de cadastro com Google ainda não implementada.");
+        }
+    </script>
+
 </body>
 </html>
