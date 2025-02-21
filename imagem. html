@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagem no Site</title>
+    <style>
+        body {
+            background-color: #000; /* Cor de fundo preta */
+            color: white; /* Cor do texto em branco */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #fff; /* Borda branca ao redor da imagem */
+        }
+    </style>
+</head>
+<body>
+
+    <img src="file:///C:/Users/Cliente/Downloads/crie-uma-imagem-de-um-dedo-tocando-na-rede-de-internet-pra-comprar-com-fundo-preto-_1_.webp" alt="Imagem de um dedo tocando na rede de internet para comprar" />
+
+</body>
+</html>
