@@ -1,158 +1,233 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro para Vender Produtos Digitais</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freelanche - Plataforma de Freelancers</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* =====================================================
+            RESET CSS
+        ====================================================== */
+        * {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(to bottom, #003366, #000000); /* Gradiente do azul escuro para o preto */
+            box-sizing: border-box;
         }
-
+        /* =====================================================
+            ESTILOS GERAIS
+        ====================================================== */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #F5F5F5; /* Alterado para tom claro */
+            color: #333333;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+        }
+        /* =====================================================
+            BARRA DE NAVEGAÇÃO SUPERIOR
+        ====================================================== */
+        nav {
+            background: linear-gradient(90deg, #2E86C1, #3498DB); /* Gradiente suave */
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+        nav .logo a {
+            color: #fff;
+            font-size: 26px;
+            font-weight: bold;
+        }
+        nav .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        nav .nav-links li {
+            margin: 0 10px;
+        }
+        nav .nav-links a {
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav .nav-links a:hover {
+            color: #dcdcdc;
+        }
+        /* =====================================================
+            CONTAINER: SIDEBAR E CONTEÚDO PRINCIPAL
+        ====================================================== */
         .container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 80%;
-            max-width: 1200px;
-            background-color: #f4f4f4; /* Cor suave para o fundo do formulário */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            margin-top: 70px; /* Espaço para a nav fixa */
+        }
+        /* =====================================================
+            BARRA LATERAL
+        ====================================================== */
+        aside {
+            width: 240px;
+            background: linear-gradient(180deg, #F5F5F5, #E8F0FE); /* Gradiente claro */
             padding: 20px;
+            border-right: 1px solid #dcdcdc;
         }
-
-        .image-section {
-            width: 50%;
-        }
-
-        .image {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra na imagem */
-        }
-
-        .form-section {
-            width: 40%;
-            background-color: #e3e8f1; /* Azul claro suave para a área de formulário */
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-        h2 {
-            font-size: 24px;
+        aside h2 {
+            font-size: 22px;
             margin-bottom: 20px;
-            color: #003366; /* Azul escuro para o título */
+            color: #2C3E50;
         }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 12px;
-            border: 1px solid #003366;
-            border-radius: 8px;
-            font-size: 16px;
+        aside ul {
+            list-style: none;
+        }
+        aside ul li {
+            margin-bottom: 15px;
+        }
+        aside ul li a {
             color: #333;
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: #003366; /* Azul escuro para o botão */
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #00509e; /* Azul mais claro ao passar o mouse */
-        }
-
-        .or-divider {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .or-divider span {
             font-size: 18px;
-            color: #003366;
+            transition: color 0.3s;
         }
-
-        .google-signup {
-            width: 100%;
-            padding: 12px;
-            background-color: #db4437;
-            color: white;
-            border: none;
+        aside ul li a:hover {
+            color: #34495E;
+        }
+        /* =====================================================
+            CONTEÚDO PRINCIPAL
+        ====================================================== */
+        main {
+            flex: 1;
+            padding: 40px 30px;
+        }
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .hero h1 {
+            margin-top: 25px;
+            font-size: 50px;
+            color: #2C3E50;
+        }
+        /* =====================================================
+            SEÇÃO DE CADASTRO
+        ====================================================== */
+        .registration {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        .registration a {
+            padding: 15px 30px;
+            background: #3498DB; /* Cor primária */
+            color: #fff;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .registration a:hover {
+            background: #2E86C1; /* Cor primária hover */
+        }
+        /* =====================================================
+            SEÇÃO DE SERVIÇOS
+        ====================================================== */
+        .services {
+            margin-bottom: 50px;
+        }
+        .services h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #2C3E50;
+        }
+        .services .service-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+        .service-item {
+            background: #fff;
+            padding: 25px;
             border-radius: 8px;
-            cursor: pointer;
+            width: 300px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            transition: transform 0.3s;
+        }
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+        .service-item h3 {
+            font-size: 26px;
+            margin-bottom: 15px;
+            color: #2C3E50;
+        }
+        .service-item p {
             font-size: 16px;
-            transition: background-color 0.3s;
+            color: #666;
         }
-
-        .google-signup:hover {
-            background-color: #c1351d;
+        /* =====================================================
+            SEÇÃO SOBRE (ABOUT)
+        ====================================================== */
+        .about {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra sutil */
         }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <div class="image-section">
-            <img src="imagem-criativa.jpg" alt="Imagem Criativa" class="image">
-        </div>
-
-        <div class="form-section">
-            <h2>Cadastre-se para Vender Seus Produtos Digitais</h2>
-            <form id="signup-form">
-                <input type="text" id="nome" placeholder="Nome completo" required><br>
-                <input type="email" id="email" placeholder="Seu e-mail (Gmail)" required><br>
-                <input type="password" id="senha" placeholder="Senha" required><br>
-                <button type="submit">Cadastrar</button>
-            </form>
-            
-            <div class="or-divider">
-                <span>OU</span>
-            </div>
-
-            <button class="google-signup" onclick="googleSignUp()">Cadastrar com Google</button>
-        </div>
-    </div>
-
-    <script>
-        // Função de cadastro (aqui você pode adicionar lógica para enviar os dados para o servidor)
-        document.getElementById('signup-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            // Obter os dados do formulário
-            let nome = document.getElementById('nome').value;
-            let email = document.getElementById('email').value;
-            let senha = document.getElementById('senha').value;
-
-            console.log("Cadastro realizado:");
-            console.log("Nome:", nome);
-            console.log("Email:", email);
-            console.log("Senha:", senha);
-
-            // Aqui você pode adicionar a lógica para salvar os dados do usuário (por exemplo, com Firebase ou outro banco)
-        });
-
-        // Função para login com Google (necessita configurar API do Google)
-        function googleSignUp() {
-            console.log("Usuário tentando se cadastrar com Google...");
-            // Aqui você pode adicionar a integração com a API do Google
-            alert("Função de cadastro com Google ainda não implementada.");
+        .about h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #2C3E50;
         }
-    </script>
-
-</body>
-</html>
+        .about p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #555;
+            text-align: justify;
+        }
+        /* =====================================================
+            SEÇÃO EXTRA (NOTÍCIAS, PORTFÓLIO, TESTEMUNHOS)
+        ====================================================== */
+        .extra-section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .extra-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2C3E50;
+        }
+        .extra-section p {
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #555;
+        }
+        /* =====================================================
+            INFORMAÇÕES ADICIONAIS PARA O FREELANCHE
+        ====================================================== */
+        .additional-info {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #eef5fa;
+            border: 1px solid #c3d1e0;
+            border-radius: 8px;
+        }
+        .additional-info h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #2C3E50;
+        }
+        .additional-info ul {
+            list-style: disc;
+            margin-left: 2
